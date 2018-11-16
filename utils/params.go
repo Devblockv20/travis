@@ -43,7 +43,7 @@ type Params struct {
 
 func DefaultParams() *Params {
 	return &Params{
-		MaxVals:                                4,
+		MaxVals:                                7,
 		BackupVals:                             1,
 		SelfStakingRatio:                       sdk.NewRat(10, 100),
 		InflationRate:                          sdk.NewRat(8, 100),
