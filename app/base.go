@@ -331,7 +331,7 @@ func (app *BaseApp) EndBlock(req abci.RequestEndBlock) (res abci.ResponseEndBloc
 
 	// block award
 	// run once per hour
-	if len(app.PresentValidators) > 0 {
+	if len(app.PresentValidators) > 0 && app.WorkingHeight() != 8 {
 		stake.NewAwardDistributor(app.Append(), app.WorkingHeight(), app.PresentValidators, app.BackupValidators, app.logger).Distribute()
 	}
 	// block award end
